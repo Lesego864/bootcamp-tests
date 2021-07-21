@@ -24,30 +24,3 @@ function mostProfitableDepartment(salesData) {
     }
     return currentDepartment;
 }
-//------------------------------------------------------------------------------
-function mostProfitableDay(salesData) {
-    const dataMap = {};
-    for (var i = 0; i < salesData.length; i++) {
-        const dataSales = salesData[i];
-        dataMap[dataSales.day] = 0;
-    }
-
-    for (var i = 0; i < salesData.length; i++) {
-        const dataSales = salesData[i];
-        var currentDay = dataMap[dataSales.day];
-        currentDay += dataSales.sales;
-        dataMap[dataSales.day] = currentDay
-    }
-
-    var currentMaxixumSales = 0;
-    var currentDay = "";
-
-    for (var dataSalesDay in dataMap) {
-        const currentDataDaySales = dataMap[dataSalesDay];
-        if (currentDataDaySales > currentMaxixumSales) {
-            currentMaxixumSales = currentDataDaySales;
-            currentDay = dataSalesDay;
-        }
-    }
-    return currentDay;
-}
