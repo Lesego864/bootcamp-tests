@@ -7,6 +7,6 @@ function fromWhere(regNum) {
         case "CA":
             return "Cape Town";
         default:
-            return "Some other place!";
+            return "Somewhere!";
     }
 }
